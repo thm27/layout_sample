@@ -1,6 +1,6 @@
 # layout_sample
 
-Layout sample of .NET WinForms
+Layout sample - .NET WinForms
 
 <hr>
 
