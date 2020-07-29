@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using GenericLayout.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,12 @@ namespace GenericLayout
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        #region Properties
+        private Panel underlineHeader;
+        private Button selectedBtn;
+        private Form currentForm;
+        #endregion
 
         #region ctor
         public MainUI()
@@ -39,6 +46,11 @@ namespace GenericLayout
             panelHeader.BackColor = Theme.panelHeader;
             panelSide.BackColor = Theme.primaryColor;
             iconHome.IconColor = Theme.detailColor;
+
+            underlineHeader = new Panel();
+            underlineHeader.Size = new Size(60, 2);
+            underlineHeader.Visible = false;
+            panelHeader.Controls.Add(underlineHeader);
 
             BindEvents();
         }
@@ -65,16 +77,75 @@ namespace GenericLayout
                     var btn = sender as IconButton;
                     btn.IconColor = Theme.detailColor;
                 };
+
+            lblShowMore.MouseEnter += 
+                (sender, args) =>
+                {
+                    lblShowMore.Font = new Font(lblShowMore.Font.Name, lblShowMore.Font.SizeInPoints, FontStyle.Underline);
+                };
+            lblShowMore.MouseLeave +=
+                (sender, args) =>
+                {
+                    lblShowMore.Font = new Font(lblShowMore.Font.Name, lblShowMore.Font.SizeInPoints, FontStyle.Regular);
+                };
             Resize += MainUI_Resize;
+        }
+
+        private void ChangeUnderlineHeaderAndBtn(Button newBtn)
+        {
+            if (selectedBtn != null)
+            {
+                selectedBtn.ForeColor = Theme.accentColor;
+            }
+            selectedBtn = newBtn;
+            selectedBtn.ForeColor = Theme.detailColor;
+            underlineHeader.BackColor = Theme.detailColor;
+            underlineHeader.Location = new Point(selectedBtn.Location.X, 52);
+            underlineHeader.Visible = true;
+            underlineHeader.Width = selectedBtn.Width;
+            underlineHeader.BringToFront();
+        }
+
+        private void Reset()
+        {
+            if (selectedBtn != null)
+            {
+                selectedBtn.ForeColor = Theme.accentColor;
+                underlineHeader.Visible = false;
+                selectedBtn = null;
+            }
+
+            if (currentForm != null)
+            {
+                currentForm.Close();
+                currentForm = null;
+            }
+        }
+
+        private void LoadForm(Form newForm)
+        {
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            currentForm = newForm;
+            currentForm.TopLevel = false;
+            currentForm.FormBorderStyle = FormBorderStyle.None;
+            currentForm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(currentForm);
+            panelContent.Tag = currentForm;
+            currentForm.BringToFront();
+            currentForm.Show();
         }
         #endregion
 
         #region Events
-
         private void BtnHeader_MouseLeave(object sender, EventArgs e)
         {
             var btn = sender as Button;
-            btn.ForeColor = Theme.accentColor;
+            if (btn != selectedBtn)
+                btn.ForeColor = Theme.accentColor;
         }
 
         private void BtnHeader_MouseEnter(object sender, EventArgs e)
@@ -115,7 +186,36 @@ namespace GenericLayout
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        #endregion        
+
+        private void btnSeguindo_Click(object sender, EventArgs e)
+        {
+            ChangeUnderlineHeaderAndBtn((Button)sender);
+            LoadForm(new FollowingForm());
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            ChangeUnderlineHeaderAndBtn((Button)sender);
+            LoadForm(new SearchForm());
+        }
+
+        private void btnEsports_Click(object sender, EventArgs e)
+        {
+            ChangeUnderlineHeaderAndBtn((Button)sender);
+            LoadForm(new EsportsForm());
+        }
+
+        private void btnMusica_Click(object sender, EventArgs e)
+        {            
+            ChangeUnderlineHeaderAndBtn((Button)sender);
+            LoadForm(new MusicForm());
+        }
+
+        private void iconHome_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+        #endregion
 
     }
 }

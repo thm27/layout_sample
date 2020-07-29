@@ -49,11 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Components\TextInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\TextInput.Designer.cs">
+      <DependentUpon>TextInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MusicForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\MusicForms.Designer.cs">
+      <DependentUpon>MusicForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EsportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EsportsForm.Designer.cs">
+      <DependentUpon>EsportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FollowingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FollowingForm.Designer.cs">
+      <DependentUpon>FollowingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainUI.cs">
       <SubType>Form</SubType>
@@ -64,8 +88,29 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Theme.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Components\ItemStream.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ItemStream.Designer.cs">
+      <DependentUpon>ItemStream.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Components\ItemStream.resx">
+      <DependentUpon>ItemStream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\TextInput.resx">
+      <DependentUpon>TextInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MusicForms.resx">
+      <DependentUpon>MusicForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EsportsForm.resx">
+      <DependentUpon>EsportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FollowingForm.resx">
+      <DependentUpon>FollowingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>

@@ -14,5 +14,8 @@ namespace GenericLayout
         public static Color accentColor = Color.FromArgb(206, 206, 208);
         public static Color detailColor = Color.FromArgb(145, 71, 255);
         public static Color detailHoverColor = Color.FromArgb(169, 112, 255);
+        public static Color subTitlesColor = Color.FromArgb(239, 239, 241);
+
+        public static Color colorBg = Color.FromArgb(14, 14, 16);
     }
 }
