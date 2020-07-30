@@ -41,10 +41,10 @@ namespace GenericLayout
             this.verticalSeparator = new System.Windows.Forms.Panel();
             this.iconHome = new FontAwesome.Sharp.IconButton();
             this.panelSide = new System.Windows.Forms.Panel();
+            this.lblShowMore = new System.Windows.Forms.Label();
             this.panelChannels = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.lblShowMore = new System.Windows.Forms.Label();
             this.itemStream9 = new GenericLayout.Components.ItemStream();
             this.itemStream8 = new GenericLayout.Components.ItemStream();
             this.itemStream7 = new GenericLayout.Components.ItemStream();
@@ -134,7 +134,8 @@ namespace GenericLayout
             // 
             // btnMusica
             // 
-            this.btnMusica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnMusica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnMusica.FlatAppearance.BorderSize = 0;
             this.btnMusica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMusica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -152,7 +153,8 @@ namespace GenericLayout
             // 
             // btnEsports
             // 
-            this.btnEsports.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnEsports.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEsports.FlatAppearance.BorderSize = 0;
             this.btnEsports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnEsports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -170,7 +172,8 @@ namespace GenericLayout
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnProcurar.FlatAppearance.BorderSize = 0;
             this.btnProcurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnProcurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -188,7 +191,8 @@ namespace GenericLayout
             // 
             // btnSeguindo
             // 
-            this.btnSeguindo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSeguindo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSeguindo.FlatAppearance.BorderSize = 0;
             this.btnSeguindo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSeguindo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -215,7 +219,8 @@ namespace GenericLayout
             // 
             // iconHome
             // 
-            this.iconHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.iconHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.iconHome.FlatAppearance.BorderSize = 0;
             this.iconHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.iconHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -251,8 +256,19 @@ namespace GenericLayout
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 54);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(245, 626);
+            this.panelSide.Size = new System.Drawing.Size(245, 675);
             this.panelSide.TabIndex = 1;
+            // 
+            // lblShowMore
+            // 
+            this.lblShowMore.AutoSize = true;
+            this.lblShowMore.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowMore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.lblShowMore.Location = new System.Drawing.Point(6, 533);
+            this.lblShowMore.Name = "lblShowMore";
+            this.lblShowMore.Size = new System.Drawing.Size(79, 15);
+            this.lblShowMore.TabIndex = 10;
+            this.lblShowMore.Text = "Mostrar mais";
             // 
             // panelChannels
             // 
@@ -280,19 +296,8 @@ namespace GenericLayout
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(245, 54);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(939, 626);
+            this.panelContent.Size = new System.Drawing.Size(939, 675);
             this.panelContent.TabIndex = 2;
-            // 
-            // lblShowMore
-            // 
-            this.lblShowMore.AutoSize = true;
-            this.lblShowMore.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowMore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
-            this.lblShowMore.Location = new System.Drawing.Point(6, 533);
-            this.lblShowMore.Name = "lblShowMore";
-            this.lblShowMore.Size = new System.Drawing.Size(79, 15);
-            this.lblShowMore.TabIndex = 10;
-            this.lblShowMore.Text = "Mostrar mais";
             // 
             // itemStream9
             // 
@@ -379,11 +384,12 @@ namespace GenericLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 680);
+            this.ClientSize = new System.Drawing.Size(1184, 729);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelSide);
             this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "MainUI";
             this.Text = "MainUI";
             this.panelHeader.ResumeLayout(false);

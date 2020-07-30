@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\TextInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Components\ItemStream.Designer.cs">
       <DependentUpon>ItemStream.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\ItemStream.resx">
       <DependentUpon>ItemStream.cs</DependentUpon>
     </EmbeddedResource>
